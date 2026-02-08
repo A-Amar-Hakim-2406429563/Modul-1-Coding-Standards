@@ -9,7 +9,8 @@ Aplikasi dibangun menggunakan arsitektur MVC (Model-View-Controller) karena meng
     - Controller bertanggung jawab menangani HTTP request dan response nya (mirip dengan view pada Django dengan arsitektur MVT).
     - Service berisi logika bisnis aplikasi.
     - Repository menangani pengelolaan data produk.
-Pemisahan ini membuat kode lebih terstruktur dan mudah dipelihara.
+   
+Pemisahan ini membuat kode lebih terstruktur dan mudah di-maintain (dipelihara).
 
 2. **Penamaan Kelas dan Method yang Jelas**
 Nama kelas dan method seperti `ProductController`, `ProductService`, `create()`, `findAll()`, `update()`, dan `delete()` sudah mencerminkan fungsinya masing-masing sehingga mudah dipahami dan di maintain.
@@ -51,3 +52,18 @@ Sekarang ini aku hanya baru mengimplementasikan konfirmasi dengan confirm() saja
 ## Kesimpulan
 
 Secara keseluruhan, implementasi fitur Edit dan Delete Product telah menerapkan prinsip clean code dan dasar secure coding dengan baik. Struktur kode sudah rapi, mudah dipahami, dan mengikuti pola yang dianjurkan dalam Spring Boot dan dalam perkuliahan Adpro ini. Beberapa perbaikan masih dapat dilakukan untuk meningkatkan dan memperbagus kualitas aplikasi, terutama pada aspek yang telah aku sebutkan diatas.
+
+# Reflection 2
+
+## 1. Pengalaman Menulis Unit Test dan Code Coverage
+- Setelah menulis unit test, aku jadi lebih yakin bahwa fitur-fitur yang aku implementasikan di proyek ini semuanya berjalan sesuai harapan.
+- Menurut aku Jumlah unit test itu tidak harus banyak, yang penting itu adalah setiap fitur utama harus diuji dan testing nya itu wajib ada positive case (case kalau berhasil) dan negative case (case kalau gagal).
+- Untuk melihat apakah unit test yang aku implementasikan dan jalankan ini sudah cukup atau belum adalah dengan melihat code coverage nya saja yg membantu melihat seberapa banyak kode yang diuji.
+- 100% code coverage itu gk menjamin kode yang aku buat ini bebas bug, karena bisa saja ada logikanya yg salah dan gk semua edge case itu diuji.
+- Jadi Intinya itu adalah unit test + code review tetap sama2 penting.
+
+## 2. Clean Code pada Functional Test
+- Menurut aku membuat banyak functional test dengan setup yg sama itu bisa menyebabkan duplikasi kode dan kode sulit di-maintain (dipelihara) gitu.
+- Hal tersebut menurunkan kualitas clean code.
+- Solusi yang lebih baik: Bisa gunain base class utk setup yg sama dan menghindarin copy-paste biar gk terjadi duplikasi kode.
+- Dengan begitu, kode test akan jadi lebih rapi, mudah dibaca, dan mudah dikembangkan gitu.
